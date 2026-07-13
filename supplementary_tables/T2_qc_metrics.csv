@@ -1,0 +1,1 @@
+sample_id,cohort,raw_read_pairs,input_read_length,unique_mapped_reads,unique_mapping_rate_pct,multimapping_rate_pct,unmapped_rate_pct,annotated_splice_rate_pct,chimeric_read_rate_pct,GC_content_pct,arcasHLA_typing_confidence,qc_pass

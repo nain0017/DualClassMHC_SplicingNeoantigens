@@ -1,0 +1,52 @@
+# pipeline: Conda environment
+# Usage: conda env create -f environment.yaml
+# Then:  conda activate splicing_neoantigen
+
+name: splicing_neoantigen
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+
+  # Alignment and BAM handling (installed via conda/bioconda)
+  - star=2.7.3a
+  - samtools=1.9
+  - regtools=1.0.0
+  - kallisto=0.44.0
+
+  # HLA typing
+  - arcashla=0.5.0
+
+  # System build tools sometimes needed for MHCnuggets patches
+  - gcc_linux-64
+  - cxx-compiler
+
+  # pip install the rest
+  - pip:
+      - -r requirements.txt
+
+# Notes:
+#
+# 1. arcasHLA requires the IMGTHLA database (version 3.43.0 used in this
+#    study). After creating the environment, run:
+#      arcasHLA reference --version 3.43.0
+#
+# 2. MHCnuggets 2.4.0 needs source patches for Keras 3 compatibility on newer
+#    TensorFlow versions. See environment/mhcnuggets_keras3_patch.md.
+#
+# 3. LeafCutter-DS is a Python and pyro re-implementation of the Dirichlet-
+#    multinomial GLM and likelihood-ratio test from the original R and Stan
+#    LeafCutter. The re-implementation was adopted because of multi-year
+#    unresolved compilation issues with the reference R and Stan implementation
+#    on Colab Pro. See pre_commitments/amendment_v5.4.3.md for the substitution
+#    rationale. Source in src/leafcutter_ds/.
+#
+# 4. Reference index and annotation:
+#      - GRCh38 with ERCC and SIRV controls (Monorail-external distribution)
+#      - GENCODE v26 GTF (for alignment; matches the Monorail index)
+#      - GENCODE v45 GTF and protein FASTA (for peptide translation)
+#    See reference_versions.md for exact URLs and MD5 sums.

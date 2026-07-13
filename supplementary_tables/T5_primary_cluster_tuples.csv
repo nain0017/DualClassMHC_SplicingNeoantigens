@@ -1,0 +1,1 @@
+cluster_tuple_id,chr,start,end,strand,gene_symbol,gene_id_GENCODE_v45,n_mapped_introns,match_type_composition,modified_protein_length_aa,modified_protein_id,class_I_binder_count,class_II_binder_count,is_dual_class_binder,is_tier3,tier3_criteria_met

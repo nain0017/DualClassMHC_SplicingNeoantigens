@@ -1,0 +1,1 @@
+cohort,cluster_id,chr,start,end,strand,n_introns,n_significant_introns,cluster_pvalue,cluster_qvalue_BH,max_abs_deltaPSI,max_deltaPSI_direction,gene_symbol,gene_id_GENCODE_v45,meets_significance_threshold

@@ -1,0 +1,1 @@
+cohort,endpoint_OS_or_PFS,predictor_metric,predictor_type_zscore_or_median_split,n_events,n_at_risk,hazard_ratio,hr_ci_lower_95,hr_ci_upper_95,cox_pvalue,logrank_pvalue,meets_prespecified_threshold
